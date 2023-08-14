@@ -8,6 +8,7 @@ public class homeController {
 	@GetMapping("/")
 	public String index(Model model) {
 		model.addAttribute("nome","Dyeggo");
+		model.addAttribute("sobrenome","Bezerra");
 		return "home/index";
 	}
 
