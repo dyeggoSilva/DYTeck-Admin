@@ -1,8 +1,6 @@
 package com.dytech.m3d2.entidades;
 
 
-import org.hibernate.annotations.Type;
-import org.springframework.data.repository.query.Parameters;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,13 +15,14 @@ import lombok.Setter;
 
 @Entity
 @Table(name="administradores")
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
 
 	@Id
+	@Getter
+	@Setter
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
@@ -35,6 +34,31 @@ public class Admin {
 	private String senha;
 	@Column(name="obs")
 	private String obs;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSenha() {
+		return senha.substring(0,3 )+ "****";
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	public String getObs() {
+		return obs;
+	}
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+	
 	
 
 }

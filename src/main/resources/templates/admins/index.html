@@ -17,38 +17,33 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Nome</th>
                                             <th>E-mail</th>
-                                            <th>Endereço</th>
-                                            <th></th>
+                                            <th>Senha</th>
                                             <th></th>
                                             
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Id</th>
                                             <th>Nome</th>
                                             <th>E-mail</th>
-                                            <th>Endereço</th>
-                                            <th></th>
+                                            <th>Senha</th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>ti@gmail.com</td>
-                                            <td>Recife</td>
+                                        <tr th:each="administradores: ${administradores}">
+                                            <td th:text="${administradores.id}"></td>
+                                           	<td th:text="${administradores.nome}">></td>
+                                           	<td th:text="${administradores.email}"></td>
+                                           	<td th:text="${administradores.senha}"></td>
                                             <td><a href="#" class="btn btn-warning">Alterar</td>
                                             <td><a href="#" class="btn btn-danger">Excluir</td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>ga@gmail.com</td>
-                                            <td>Tokyo</td>
-                                           <td><a href="#" class="btn btn-warning">Alterar</td>
-                                            <td><a href="#" class="btn btn-danger">Excluir</td>
-                                        </tr>
+                                        
                                        
                                     </tbody>
                                 </table>
